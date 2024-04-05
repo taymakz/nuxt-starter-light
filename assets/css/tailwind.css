@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+ :root {
+  --background: 240 4.8% 95.9%;
+  --text: 240 10% 3.9%;
+  --warning: 0 72% 51%;
+  --success: 142 71% 45%;
+  --success-secondary: 160 84% 39%;
+  --alert: 38 92% 50%;
+  --blue: 199 89% 50%;
+  --cyan: 189 94% 43%;
+  --muted: 0 0% 100%;
+  --border: 240 5.9% 90%;
+  --primary: 199 88% 48%;
+  --primary-btn: 199, 89%, 48%;
+  --secondary: 240 6% 90%;
+  --destructive: 0 84.2% 60.2%;
+  --ring: 240 10% 3.9%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --text: 0 0% 98%;
+  --warning: 0 84% 60%;
+  --success: 142 69% 58%;
+  --success-secondary: 161 94% 30%;
+  --alert: 43 96% 56%;
+  --blue: 198 93% 57%;
+  --cyan: 188 86% 53%;
+  --muted: 270 4% 10%;
+  --border: 240 3.7% 15.9%;
+  --primary: 200 98% 39%;
+  --primary-btn: 200, 98%, 39%;
+  --secondary: 240 4% 16%;
+  --destructive: 0 62.8% 30.6%;
+  --ring: 240 4.9% 83.9%;
+}
+
+}
+ 
+@layer base {
+  @font-face {
+    font-family: "IRANYekan";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/iranyekan/IRANYekanXFaNum-Light.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "IRANYekan";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/iranyekan/IRANYekanXFaNum-Regular.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "IRANYekan";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../fonts/iranyekan/IRANYekanXFaNum-Medium.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "IRANYekan";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/iranyekan/IRANYekanXFaNum-DemiBold.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "IRANYekan";
+    font-style: normal;
+    font-weight: bold;
+    src: url("../fonts/iranyekan/IRANYekanXFaNum-Bold.woff2") format("woff2");
+  }
+
+ 
+  ::selection {
+    background: #8884;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.31rem;
+    height: 0.5rem;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: hsl(var(--muted)) !important;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: calc(var(--radius) - 4px);
+    background-color: hsl(var(--secondary) / 0.3) !important;
+  }
+  html {
+    scrollbar-color: hsl(215.4 16.3% 46.9% / 0.3);
+  }
+  
+  html.dark {
+    scrollbar-color: hsl(215.4 16.3% 56.9% / 0.3);
+  }
+  
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  ::view-transition-old(root) {
+    z-index: 1;
+  }
+
+  ::view-transition-new(root) {
+    z-index: 2147483646;
+  }
+
+  .dark::view-transition-old(root) {
+    z-index: 2147483646;
+  }
+
+  .dark::view-transition-new(root) {
+    z-index: 1;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-text font-iranyekan;
+  }
+  .dark{
+    color-scheme: dark
+  }
+}
+
+
